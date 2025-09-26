@@ -12,16 +12,19 @@ import {
 import { UniverSheetsHyperLinkPreset } from "@univerjs/preset-sheets-hyper-link";
 import { UniverSheetsCorePreset } from "@univerjs/preset-sheets-core";
 import { UniverSheetsDataValidationPreset } from "@univerjs/preset-sheets-data-validation";
+import { UniverSheetsDrawingPreset } from "@univerjs/preset-sheets-drawing";
 
 // locales
 import UniverPresetSheetsCoreEnUS from "@univerjs/preset-sheets-core/locales/en-US";
 import UniverPresetSheetsHyperLinkEnUS from "@univerjs/preset-sheets-hyper-link/locales/en-US";
 import UniverPresetSheetsDataValidationEnUS from "@univerjs/preset-sheets-data-validation/locales/en-US";
+import UniverPresetSheetsDrawingEnUS from "@univerjs/preset-sheets-drawing/locales/en-US";
 
 // css
 import "@univerjs/preset-sheets-core/lib/index.css";
 import "@univerjs/preset-sheets-hyper-link/lib/index.css";
 import "@univerjs/preset-sheets-data-validation/lib/index.css";
+import "@univerjs/preset-sheets-drawing/lib/index.css";
 
 // types
 import type { FWorkbook } from "@univerjs/sheets/lib/types/facade/f-workbook.js";
@@ -70,7 +73,8 @@ function App() {
         [LocaleType.EN_US]: mergeLocales(
           UniverPresetSheetsCoreEnUS,
           UniverPresetSheetsHyperLinkEnUS,
-          UniverPresetSheetsDataValidationEnUS
+          UniverPresetSheetsDataValidationEnUS,
+          UniverPresetSheetsDrawingEnUS
         ),
       },
       presets: [
@@ -87,6 +91,7 @@ function App() {
         UniverSheetsDataValidationPreset({
           showEditOnDropdown: true,
         }),
+        UniverSheetsDrawingPreset(),
       ],
     }) as CreateUniverResult;
 
