@@ -67,7 +67,7 @@ function App() {
 
   useEffect(() => {
     const { univerAPI, univer } = createUniver({
-      darkMode: isDark,
+      darkMode: false,
       locale: LocaleType.EN_US,
       locales: {
         [LocaleType.EN_US]: mergeLocales(
@@ -96,6 +96,35 @@ function App() {
     }) as CreateUniverResult;
 
     univerAPI.createWorkbook(WORKBOOK_DATA);
+
+    univerAPI.addEvent(univerAPI.Event.LifeCycleChanged, async (event) => {
+      if (event.stage === univerAPI.Enum.LifecycleStages.Rendered) {
+        const fWorkbook = univerAPI.getActiveWorkbook();
+        const fWorksheet = fWorkbook?.getActiveSheet();
+
+        const imageUrl = "https://avatars.githubusercontent.com/u/61444807";
+
+        // Insert a floating image into the active worksheet
+        const image = await fWorksheet
+          ?.newOverGridImage()
+          .setSource(imageUrl, univerAPI.Enum.ImageSourceType.URL)
+          .setColumn(15)
+          .setRow(5)
+          .setWidth(120)
+          .setHeight(120)
+          .buildAsync();
+
+        image && fWorksheet?.insertImages([image]);
+
+        // Insert a cell image into the active worksheet
+        const cells = ["A11", "B11", "C11", "D15", "E15s"];
+        cells.forEach((cell) => {
+          const fRange = fWorksheet?.getRange(cell);
+          fRange?.insertCellImageAsync(imageUrl);
+        });
+      }
+    });
+
     if (containerRef.current) {
       univerRef.current = univer; // Save Univer instance
     }

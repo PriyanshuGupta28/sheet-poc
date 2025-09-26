@@ -514,6 +514,60 @@ export const WORKBOOK_DATA: Partial<IWorkbookData> = {
             },
           },
         },
+        11: {
+          // Row 12
+          6: {
+            // Column G
+            v: "",
+            t: 1,
+          },
+          7: {
+            // Column H
+            v: "",
+            t: 1,
+          },
+          8: {
+            // Column I
+            v: "",
+            t: 1,
+          },
+        },
+        12: {
+          // Row 13
+          6: {
+            // Column G
+            v: "",
+            t: 1,
+          },
+          7: {
+            // Column H
+            v: "",
+            t: 1,
+          },
+          8: {
+            // Column I
+            v: "",
+            t: 1,
+          },
+        },
+        13: {
+          // Row 14
+          6: {
+            // Column G
+            v: "",
+            t: 1,
+          },
+          7: {
+            // Column H
+            v: "",
+            t: 1,
+          },
+          8: {
+            // Column I
+            v: "",
+            t: 1,
+          },
+        },
       },
       rowData: {},
       columnData: {},
@@ -558,6 +612,7 @@ export const WORKBOOK_DATA: Partial<IWorkbookData> = {
       name: "SHEET_RANGE_THEME_MODEL_PLUGIN",
       data: "{}",
     },
+
     // Add data validation plugin for dropdowns
     {
       name: "SHEET_DATA_VALIDATION_PLUGIN",
@@ -591,6 +646,10 @@ export const WORKBOOK_DATA: Partial<IWorkbookData> = {
           },
         ],
       }),
+    },
+    {
+      name: "SHEET_DRAWING_PLUGIN",
+      data: '{"SHh40QNCykVZr7CbKqQdv":{"data":{"7vem6g":{"unitId":"xf_VBt","subUnitId":"SHh40QNCykVZr7CbKqQdv","drawingId":"7vem6g","drawingType":0,"imageSourceType":"BASE64","source":"https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8=","sheetTransform":{"flipY":false,"flipX":false,"angle":0,"skewX":0,"skewY":0,"from":{"column":11,"columnOffset":2.4,"row":1,"rowOffset":3.9},"to":{"column":15,"columnOffset":1.5,"row":10,"rowOffset":7.3}},"transform":{"flipY":false,"flipX":false,"angle":0,"skewX":0,"skewY":0,"left":136.4,"top":47.9,"width":351.1,"height":219.4}}},"order":["7vem6g"]}}',
     },
   ],
 };
