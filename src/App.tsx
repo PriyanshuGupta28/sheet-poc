@@ -689,38 +689,11 @@ function App() {
           className={isDragging ? "container--dragging" : ""}
         />
 
-        {/* Instructions overlay */}
-        <div
-          style={{
-            position: "fixed",
-            top: 10,
-            right: 10,
-            background: "rgba(0, 0, 0, 0.8)",
-            color: "white",
-            padding: "10px 15px",
-            borderRadius: "5px",
-            fontSize: "14px",
-            zIndex: 1000,
-          }}
-        >
-          <div>Drag and drop images directly onto any cell</div>
-          {hoveredCell && isDragging && (
-            <div style={{ marginTop: "5px", color: "#4CAF50" }}>
-              Drop target: {hoveredCell}
-            </div>
-          )}
-          {isDragging && !hoveredCell && (
-            <div style={{ marginTop: "5px", color: "#FFC107" }}>
-              Drag over a cell to select it
-            </div>
-          )}
-        </div>
-
         {/* Floating drag feedback near cursor */}
         {isDragging && dragPos && (
           <div
             className="drag-feedback"
-            style={{ left: dragPos.x, top: dragPos.y }}
+            style={{ left: dragPos.x + 30, top: dragPos.y + 20 }}
           >
             {hoveredCell
               ? `Drop to insert image in ${hoveredCell}`
